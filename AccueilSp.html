@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+
+  <body>
+    <header id="header">
+      <div class="top-bar"></div>
+        <div class="gauche"></div>
+        <div class="image-base64 logo" data-id="logo" data-src="image/logo-base64.txt"></div>
+        <h1 class="title"> COOP IN VIVO</h1>
+          <button id="menu-toggle" class="menu-btn">☰</button>
+        </div>  
+        <div class="langues">
+          <a href="index.html">
+        <div class="image-base64 flag" data-id="wallon" data-src="image/wallon-base64.txt"></div></a>
+          <a href="AccueilEn.html">
+        <div class="image-base64 flag" data-id="anglais" data-src="image/anglais-base64.txt"></div></a>
+          <a href="AccueilSp.html">
+        <div class="image-base64 flag" data-id="espagnol" data-src="image/espagnol-base64.txt"></div></a>
+        </div>
+        
+      
+      
+   
+  <nav id="menu-content" class="menu">
+    <ul>
+      <li><a href="AccueilSp.html">Bienvenidos a Coop in Vivo</a></li>
+      <li><a href="aproposSp.html">Acerca de objetivos</a></li>
+      <li><a href="equipeSp.html">El equipo</a></li>
+      <li><a href="projetsSp.html">Proyectos en curso</a></li>
+      <li><a href="partenairesSp.html">Nuestros socios y donantes</a></li>
+      <li><a href="aiderSp.html">Como ayudamos</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+        
+  
+</nav>
+    </header>
+</body>
+
+
+
+    <main id="content">
+      <section class="centercolumn">
+        <h2>Formando hoy a quienes impulsarán la ciencia, la educación y la salud del mañana.</h2>
+        <p>
+          Coop in vivo es una organización sin fines de lucro que promueve la formación práctica en biotecnología en países en desarrollo. Colaboramos con instituciones locales y compañías farmacéuticas para fortalecer la autonomía científica y mejorar el acceso a herramientas de salud para todos. </p>
+
+        <div class="contenu-flex">
+         
+          <div class="bloc">
+            <h3>¿Por qué es importante nuestra misión?</h3>
+            <p>La formación práctica permite a los estudiantes adquirir habilidades profesionales concretas.</p>
+            <p>En muchos países, estas oportunidades son limitadas o inexistentes.</p>
+            <p>Coop in vivo trabaja para garantizar que el acceso a las herramientas científicas y sanitarias no dependa del lugar de nacimiento.</p>
+          </div>
+          <div class="bloc">
+            illustration??
+            </div>
+            
+          <div class="bloc">
+            <h4>“Cada acción cuenta: compartir conocimiento significa dar a las personas las claves de la autonomía sanitaria”.</h4>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <div id="footer"></div>
+    <script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+
+ <script>
+  document.getElementById("menu-toggle").addEventListener("click", function() {
+    var menu = document.getElementById("menu-content");
+    menu.classList.toggle("menu-active")
+   if (menu.style.display === "block") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
+  });
+  fetch("image/banniere-base64.txt")
+  .then(res => res.text())
+  .then(base64 => {
+    document.getElementById("header").style.backgroundImage = `url(${base64})`;
+  });
+  document.querySelectorAll(".image-base64").forEach(div => {
+    const srcFile = div.dataset.src;
+    const altText = div.dataset.id || "image";
+
+    fetch(srcFile)
+    .then(response => response.text())
+    .then(base64 => {
+        const img = document.createElement("img");
+        img.src = base64;
+        img.alt = altText;
+        div.appendChild(img);
+    })
+    .catch(error => {
+    console.error('Erreur lors du chargement de ${srcFile} :', error);
+    div.innerText = "Image indisponible.";
+    })
+    fetch("banniere-base64.txt")
+    .then(response => response.txt())
+    .then(base64 =>{
+      const header = document.getElementById("header");
+      header.style.backgroundImage = 'url(${base64})';
+      header.style.backgroundRepeat = "repeat-x";
+      header.style.backgroundSize ="auto 100%"; //ajuste si besoin
+      header.style.backgroundPosition ="top-center";
+    })
+    .catch(error => {
+      console.error("Erreur lors du chargement du fond d'en tête:", error);
+    })
+
+  });
+
+</script>
+
+  </body>
+
+</html>

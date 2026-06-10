@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+
+  <body>
+    <header id="header">
+      <div class="top-bar"></div>
+        <div class="gauche"></div>
+        <div class="image-base64 logo" data-id="logo" data-src="image/logo-base64.txt"></div>
+        <h1 class="title"> COOP IN VIVO</h1>
+          <button id="menu-toggle" class="menu-btn">☰</button>
+        </div>  
+        <div class="langues">
+          <a href="index.html">
+        <div class="image-base64 flag" data-id="wallon" data-src="image/wallon-base64.txt"></div></a>
+          <a href="AccueilEn.html">
+        <div class="image-base64 flag" data-id="anglais" data-src="image/anglais-base64.txt"></div></a>
+          <a href="AccueilSp.html">
+        <div class="image-base64 flag" data-id="espagnol" data-src="image/espagnol-base64.txt"></div></a>
+        </div>
+        
+      
+      
+   
+  <nav id="menu-content" class="menu">
+    <ul>
+      <li><a href="AccueilSp.html">Bienvenidos a Coop in Vivo</a></li>
+      <li><a href="aproposSp.html">Acerca de objetivos</a></li>
+      <li><a href="equipeSp.html">El equipo</a></li>
+      <li><a href="projetsSp.html">Proyectos en curso</a></li>
+      <li><a href="partenairesSp.html">Nuestros socios y donantes</a></li>
+      <li><a href="aiderSp.html">Como ayudamos</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+        
+  
+</nav>
+    </header>
+</body>
+
+<main id="content">
+      <section class="centercolumn">
+        <h2>La visión de COOP en VIVO</h2>
+        <p>
+          Un mundo donde el acceso a la atención médica y a las innovaciones médicas ya no dependa del lugar de nacimiento. Mediante el desarrollo de formación práctica en biotecnología y la promoción de la ciencia en países en desarrollo, en colaboración directa con los actores locales, contribuimos al desarrollo de profesionales cualificados capaces de fortalecer la autonomía sanitaria de su región.</p>
+
+        <div class="contenu-flex">
+          <div class="bloc">
+            <h3>Historia de la organización sin fines de lucro</h3>
+            <p> La idea de Coop in vivo surgió en el marco de los programas de capacitación en  <a target="_blank"href="https://www.invivo.be">Culture in vivo.</a> 
+<br />Estos programas reunieron a estudiantes de numerosos países en desarrollo, quienes compartieron sus experiencias y desafíos en el aprendizaje de técnicas biotecnológicas.<br />
+<br />En estos debates, surgió una observación clave: estos estudiantes poseían una excelente base teórica, pero carecían de oportunidades para poner en práctica sus conocimientos.<br />
+<br />De estas conversaciones surgió el deseo de crear Coop in vivo, una organización sin fines de lucro dedicada a la cocreación de programas de capacitación práctica, en colaboración con instituciones locales, para el acceso equitativo a la ciencia y la salud.
+<br /><br />Nuestro compromiso: fortalecer la educación técnica, valorar el conocimiento local y fomentar la colaboración entre las partes interesadas del Norte y del Sur Global, en igualdad de condiciones.</p>
+             </div>
+
+          <div class="bloc">
+            <h3>Nuestras Misiones</h3>
+            <h4>Mejorar el Acceso a la Formación Práctica en Biotecnología</h4>
+            <br /><p>Codesarrollamos programas de formación en biotecnología con instituciones de educación superior en países en desarrollo, adaptados a las necesidades locales.
+<br /><br />Trabajamos junto con universidades y compañías farmacéuticas para fortalecer la autonomía científica y aumentar el número de profesionales cualificados en este sector.
+<br /><br />Nuestro objetivo: impulsar la creación de centros de producción y diagnóstico farmacéutico, mejorando así de forma sostenible el acceso a medicamentos y herramientas sanitarias.</p>
+<h4>Fortalecimiento de la Infraestructura Local</h4> <br />           
+<p>Contribuimos a la mejora de la infraestructura facilitando la adquisición e instalación de equipos esenciales de laboratorio (PCR, campanas de flujo laminar, autoclaves, etc.), lo que permite una formación técnica de alta calidad.</p>
+<h4>Acogida de estudiantes y profesores en prácticas en nuestro centro asociado</h4><br />            
+<p>Acogemos a estudiantes y profesores de países asociados en nuestro centro de formación asociado, <a target="_blank"href="https://www.invivo.be">Culture in vivo</a>, en Bélgica. Estas prácticas de dos meses les permiten desarrollar sus habilidades en biología molecular, cultivos celulares, microbiología, virología y técnicas inmunológicas, fomentando el intercambio y la colaboración. Nuestro objetivo a largo plazo es estructurar sesiones de formación específicas para estos participantes, impartidas en <strong>español, francés o inglés.</strong>
+</p>
+<h4>Promoción de la ciencia en escuelas secundarias</h4> <br />
+<p>En colaboración con escuelas locales, tanto presenciales como a distancia, ofrecemos talleres prácticos de biología, especialmente para introducir la microbiología e inspirar a futuros científicos.</p>        
+</div>
+        </div>
+
+       
+      </section>
+    </main>
+
+
+
+<div id="footer"></div>
+    <script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+
+ <script>
+  document.getElementById("menu-toggle").addEventListener("click", function() {
+    var menu = document.getElementById("menu-content");
+    menu.classList.toggle("menu-active")
+   if (menu.style.display === "block") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
+  });
+  fetch("image/banniere-base64.txt")
+  .then(res => res.text())
+  .then(base64 => {
+    document.getElementById("header").style.backgroundImage = `url(${base64})`;
+  });
+  document.querySelectorAll(".image-base64").forEach(div => {
+    const srcFile = div.dataset.src;
+    const altText = div.dataset.id || "image";
+
+    fetch(srcFile)
+    .then(response => response.text())
+    .then(base64 => {
+        const img = document.createElement("img");
+        img.src = base64;
+        img.alt = altText;
+        div.appendChild(img);
+    })
+    .catch(error => {
+    console.error('Erreur lors du chargement de ${srcFile} :', error);
+    div.innerText = "Image indisponible.";
+    })
+    fetch("banniere-base64.txt")
+    .then(response => response.txt())
+    .then(base64 =>{
+      const header = document.getElementById("header");
+      header.style.backgroundImage = 'url(${base64})';
+      header.style.backgroundRepeat = "repeat-x";
+      header.style.backgroundSize ="auto 100%"; //ajuste si besoin
+      header.style.backgroundPosition ="top-center";
+    })
+    .catch(error => {
+      console.error("Erreur lors du chargement du fond d'en tête:", error);
+    })
+
+  });
+
+</script>
+
+  </body>
+
+</html>

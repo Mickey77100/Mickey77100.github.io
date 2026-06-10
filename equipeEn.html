@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+
+  <body>
+    <header id="header">
+      <div class="top-bar"></div>
+        <div class="gauche"></div>
+        <div class="image-base64 logo" data-id="logo" data-src="image/logo-base64.txt"></div>
+        <h1 class="title"> COOP IN VIVO</h1>
+          <button id="menu-toggle" class="menu-btn">☰</button>
+        </div>  
+        <div class="langues">
+          <a href="index.html">
+        <div class="image-base64 flag" data-id="wallon" data-src="image/wallon-base64.txt"></div></a>
+          <a href="AccueilEn.html">
+        <div class="image-base64 flag" data-id="anglais" data-src="image/anglais-base64.txt"></div></a>
+          <a href="AccueilSp.html">
+        <div class="image-base64 flag" data-id="espagnol" data-src="image/espagnol-base64.txt"></div></a>
+        </div>
+        
+      
+      
+   
+  <nav id="menu-content" class="menu">
+    <ul>
+      <li><a href="AccueilEn.html">Welcome to Coop in Vivo</a></li>
+      <li><a href="aproposEn.html">About us</a></li>
+      <li><a href="equipeEn.html">The team</a></li>
+      <li><a href="projetsEn.html">Current projects</a></li>
+      <li><a href="partenairesEn.html">Our partners and donors</a></li>
+      <li><a href="aiderEn.html">How to help us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+        
+  
+</nav>
+    </header>
+</body>
+
+<main id="content">
+      <section class="centercolumn">
+          <div class="contenu-flex"></div>
+            <div class="bloc">
+                
+                <h2>Our team</h2>
+                <p><em>At Coop in vivo, each member brings their experience and vision to build concrete projects that support scientific training and healthcare autonomy. Our team brings together researchers, trainers, and professionals committed to a shared ideal: equitable access to science and healthcare. </em></p></div>
+            
+            <!-- Deuxième bloc
+-->
+          <div class="bloc">
+            </div>
+            <div class="image-base64"data-src=femme-base64.txt data-id="Nathalie"></div>
+            </div>
+            <p><strong>Nathalie Bessodes — President of the non-profit organization.</strong> PhD in molecular and cellular biology. Nathalie initially pursued a career in academic research in France and then Belgium, with a particular interest in the genetics of embryonic development. For ten years, she acquired extensive experience in molecular biology (qPCR, cloning, RNA synthesis, in situ hybridization), immunological techniques (Western blot, co-immunoprecipitation, immunohistochemistry), and histology. In 2017, she joined the Culture in vivo team, where she designs and leads training programs in biotechnology, particularly in molecular biology, in collaboration with pharmaceutical companies such as GSK. Aware of the inequalities in access to scientific practice in developing countries, she founded Coop in vivo, <a target="_blank"href="https://www.invivo.be">Culture in vivo</a>'s sister organization, to promote more equitable access to practical training in biotechnology.</p>
+
+            </div>
+            <div class="image-base64"data-src=homme-base64.txt data-id="Juan"></div>
+            </div>
+            <p><strong>Juan-Fernando Castro-Castañeda — Vice-président</strong>
+A biologist by training, Juan earned a bachelor's degree in biological sciences from the University of Antioquia (Colombia) and a master's degree in cellular and molecular biology from the University of Malaga (Spain). He then gained initial experience in forensic genetics before specializing in molecular biology and cell culture. In 2024, he joined <a target="_blank"href="https://www.invivo.be">Culture in vivo</a> as a scientific trainer, where he designs and leads specialized training in cell culture. At <a target="_blank"href="https://www.invivo.be">Culture in vivo</a>, he brings valuable insight into local realities in Latin America and actively contributes to establishing university partnerships. As vice president, he plays a key role in developing international projects and adapting training programs to the needs of partner students and faculty.</p>
+            <div class="image-base64"data-src=homme-base64.txt data-id="Fabien"></div>
+            </div>
+            <p><strong>Fabien Baldacci — Treasurer.</strong>
+With a PhD in molecular and cellular biology, Fabien pursued a career in academic research in France and then Belgium, with a particular interest in plant-microorganism interactions at the molecular level. He then continued his career in the biopharmaceutical industry, first as an R&D scientist, then as manager of the RNA and Viral Vector analytical team at Exothera. Fabien brings to Coop in vivo his experience in non-profit management (former president of the non-profit organization Art de la recherche) as well as valuable knowledge of the biopharmaceutical industry. His profile bridges the academic, industrial, and non-profit worlds, serving the sustainable development of the non-profit's projects.</p>
+            
+<div class="image-base64"data-src=femme-base64.txt data-id="Sandrine"></div>
+            <p><strong>Sandrine Verhelst — Secretary.</strong>
+With 14 years of experience as a Supply Chain Specialist, Sandrine brings essential expertise to Coop in vivo in the logistics and management of shipments of scientific equipment to partner universities. Holding a degree in public relations, advertising, and applied communication, she also contributes to the association's promotion and communication efforts. Her versatility and organizational skills make her a key player in the smooth running of projects.</p>
+            </div>
+<div class="image-base64"data-src=homme-base64.txt data-id="Vincent"></div>
+            <p><strong>Vincent Mériaux — Full Member. </strong> Holding a Master's degree and a DEA (postgraduate diploma) in oncology, Vincent initially worked for five years as a manager of associations before joining <a target="_blank"href="https://www.invivo.be">Culture in vivo</a> in 2003 as a trainer. Since 2012, he has been its director. His field experience, his knowledge of associative structures, and his commitment to education make him a valuable asset to Coop in vivo. He actively contributes to the collaboration with <a target="_blank"href="https://www.invivo.be">Culture in vivo</a> and participates in the implementation of the project to promote science in secondary schools in India.
+
+
+</div>
+    </div>
+      </main>
+
+<div id="footer"></div>
+    <script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+
+ <script>
+  document.getElementById("menu-toggle").addEventListener("click", function() {
+    var menu = document.getElementById("menu-content");
+    menu.classList.toggle("menu-active")
+   if (menu.style.display === "block") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
+  });
+  fetch("image/banniere-base64.txt")
+  .then(res => res.text())
+  .then(base64 => {
+    document.getElementById("header").style.backgroundImage = `url(${base64})`;
+  });
+  document.querySelectorAll(".image-base64").forEach(div => {
+    const srcFile = div.dataset.src;
+    const altText = div.dataset.id || "image";
+
+    fetch(srcFile)
+    .then(response => response.text())
+    .then(base64 => {
+        const img = document.createElement("img");
+        img.src = base64;
+        img.alt = altText;
+        div.appendChild(img);
+    })
+    .catch(error => {
+    console.error('Erreur lors du chargement de ${srcFile} :', error);
+    div.innerText = "Image indisponible.";
+    })
+    fetch("banniere-base64.txt")
+    .then(response => response.txt())
+    .then(base64 =>{
+      const header = document.getElementById("header");
+      header.style.backgroundImage = 'url(${base64})';
+      header.style.backgroundRepeat = "repeat-x";
+      header.style.backgroundSize ="auto 100%"; //ajuste si besoin
+      header.style.backgroundPosition ="top-center";
+    })
+    .catch(error => {
+      console.error("Erreur lors du chargement du fond d'en tête:", error);
+    })
+
+  });
+
+</script>
+
+  </body>
+
+</html>

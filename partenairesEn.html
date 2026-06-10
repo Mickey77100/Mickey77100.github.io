@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+
+  <body>
+    <header id="header">
+      <div class="top-bar"></div>
+        <div class="gauche"></div>
+        <div class="image-base64 logo" data-id="logo" data-src="image/logo-base64.txt"></div>
+        <h1 class="title"> COOP IN VIVO</h1>
+          <button id="menu-toggle" class="menu-btn">☰</button>
+        </div>  
+        <div class="langues">
+          <a href="index.html">
+        <div class="image-base64 flag" data-id="wallon" data-src="image/wallon-base64.txt"></div></a>
+          <a href="AccueilEn.html">
+        <div class="image-base64 flag" data-id="anglais" data-src="image/anglais-base64.txt"></div></a>
+          <a href="AccueilSp.html">
+        <div class="image-base64 flag" data-id="espagnol" data-src="image/espagnol-base64.txt"></div></a>
+        </div>
+        
+      
+      
+   
+  <nav id="menu-content" class="menu">
+    <ul>
+      <li><a href="AccueilEn.html">Welcome to Coop in Vivo</a></li>
+      <li><a href="aproposEn.html">About us</a></li>
+      <li><a href="equipeEn.html">The team</a></li>
+      <li><a href="projetsEn.html">Current projects</a></li>
+      <li><a href="partenairesEn.html">Our partners and donors</a></li>
+      <li><a href="aiderEn.html">How to help us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+        
+  
+</nav>
+    </header>
+</body>
+<main id="content">
+      <section class="centercolumn">
+        <h2>En construction</h2>
+        <div class="contenu-flex">
+          <div class="bloc">
+        
+        <center>
+        <div class="image-base64"data-src=image/travaux-base64.txt data-id=" "></div>
+        </center>
+
+
+
+
+
+
+
+</div>
+    </div>
+      </main>
+
+<div id="footer"></div>
+    <script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+
+ <script>
+  document.getElementById("menu-toggle").addEventListener("click", function() {
+    var menu = document.getElementById("menu-content");
+    menu.classList.toggle("menu-active")
+   if (menu.style.display === "block") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
+  });
+  fetch("image/banniere-base64.txt")
+  .then(res => res.text())
+  .then(base64 => {
+    document.getElementById("header").style.backgroundImage = `url(${base64})`;
+  });
+  document.querySelectorAll(".image-base64").forEach(div => {
+    const srcFile = div.dataset.src;
+    const altText = div.dataset.id || "image";
+
+    fetch(srcFile)
+    .then(response => response.text())
+    .then(base64 => {
+        const img = document.createElement("img");
+        img.src = base64;
+        img.alt = altText;
+        div.appendChild(img);
+    })
+    .catch(error => {
+    console.error('Erreur lors du chargement de ${srcFile} :', error);
+    div.innerText = "Image indisponible.";
+    })
+    fetch("banniere-base64.txt")
+    .then(response => response.txt())
+    .then(base64 =>{
+      const header = document.getElementById("header");
+      header.style.backgroundImage = 'url(${base64})';
+      header.style.backgroundRepeat = "repeat-x";
+      header.style.backgroundSize ="auto 100%"; //ajuste si besoin
+      header.style.backgroundPosition ="top-center";
+    })
+    .catch(error => {
+      console.error("Erreur lors du chargement du fond d'en tête:", error);
+    })
+
+  });
+
+</script>
+
+  </body>
+
+</html>
